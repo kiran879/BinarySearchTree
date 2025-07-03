@@ -3,8 +3,8 @@ CC = gcc
 CF = -c -Wall
 DF = -DDEBUG
 
-BST: main.o mainMenu.o init.o exitProgram.o createBST.o addNode.o deleteNode.o displayBST.o deleteBST.o createNode.o
-	${CC} -o BST main.o mainMenu.o init.o exitProgram.o createBST.o addNode.o deleteNode.o displayBST.o deleteBST.o createNode.o
+BST: main.o mainMenu.o init.o exitProgram.o createBST.o addNode.o deleteNode.o displayBST.o deleteBST.o createNode.o findKey.o
+	${CC} -o BST main.o mainMenu.o init.o exitProgram.o createBST.o addNode.o deleteNode.o displayBST.o deleteBST.o createNode.o findKey.o
 main.o: main.c headers.h dataStructures.h declarations.h
 	${CC} ${CF} ${DF} main.c 
 mainMenu.o: mainMenu.c headers.h dataStructures.h declarations.h
@@ -25,6 +25,8 @@ deleteBST.o: deleteBST.c headers.h dataStructures.h declarations.h
 	${CC} ${CF} ${DF} deleteBST.c 
 createNode.o: createNode.c headers.h dataStructures.h declarations.h
 	${CC} ${CF} ${DF} createNode.c 
+findKey.o: findKey.c headers.h dataStructures.h declarations.h
+	${CC} ${CF} ${DF} findKey.c 
 
 clean:
 	rm -f BST
